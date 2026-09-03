@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(#eba8a8, #f7dcdc);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.error-container {
+    margin-top: 20px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_code {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    margin: 0;
+
+    font-size: 53vh;
+    font-weight: 900;
+    line-height: 0.8;
+    white-space: nowrap;
+    mask-image: linear-gradient(to bottom, rgb(255, 255, 255), transparent);
+    background: linear-gradient(
+        180deg,
+        #faf9f9,
+        #ffffff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    transform:
+        translate(-50%, -50%)
+        scaleX(1.9)
+        scaleY(2.7);
+
+    transform-origin: center;
+
+    z-index: 0;
+    animation: slideDown 1s ease-out forwards;
+}
+
+.character {
+    position: absolute;
+    top: 50px;
+    width: min(420px, 30vw);
+    height: auto;
+
+    z-index: 1;
+    animation: slideDownCharacter 1.2s ease-out forwards;
+}
+
+p {
+    margin: 0;
+    font-size: 30px;
+    animation: slideUp 1s ease-out forwards;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .error_code {
+        font-size: 42vh;
+
+        transform:
+            translate(-50%, -50%)
+            scaleX(1.5)
+            scaleY(2.4);
+    }
+
+    .character {
+        top: 8vh;
+        width: min(380px, 42vw);
+    }
+
+    p {
+        margin-bottom: 5vh;
+        padding: 0 30px;
+
+        font-size: 26px;
+        text-align: center;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -70%)
+            scaleX(1.9)
+            scaleY(2.7);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scaleX(1.9)
+            scaleY(2.7);
+    }
+}
+
+@keyframes slideDownCharacter {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
