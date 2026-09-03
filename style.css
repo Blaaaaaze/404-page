@@ -65,7 +65,7 @@ body {
 
 .character {
     position: absolute;
-    top: 50px;
+    top: 30px;
     width: min(420px, 30vw);
     height: auto;
 
